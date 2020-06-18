@@ -22,13 +22,43 @@
     </select>
     <label for="iddata"></label>
     <input type="text" id="iddata" name="iddata"><br>
-    <p>Sexo</p>
-    <input type="radio" id="masc" name="masc">
+    Sexo <br>
+    <input type="radio" id="masc" name="gender">
     <label for="masc">Masculino</label><br>
-    <input type="radio" id="fem" name="fem">
-    <label for="fem">Femenino</label><br>
+    <input type="radio" id="fem" name="gender">
+    <label for="fem">Femenino</label><br><br>
+    <label for="photo">Incluir mi foto</label><br>
+    <input type="file" accept="image/jpeg" id="photo" name="photo"><br><br>
+    <input type="checkbox" id="student" name="student">
+    <label for="student">Estudiante...</label>
+    <fieldset >
+        <legend>Datos personales</legend>
+        <label for="dpto">Departamento</label>
+        <select id="dpto" name="dpto">
+            <option value="sl">--seleccione--</option>
+        </select><br>
+        Fecha de nacimiento<br>
+        <label for="day"></label>
+        <input type="text" id="day" width="200">
+        <label for="month">de</label>
+        <select id="month" name="dpto">
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+            <option value="4">Abril</option>
+            <option value="5">Mayo</option>
+            <option value="6">Junio</option>
+            <option value="7">Julio</option>
+            <option value="8">Agosto</option>
+            <option value="9">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+        </select>
+        <label for="year">de</label>
+        <input type="text" id="year">
 
-
+    </fieldset>
 </form>
 </body>
 </html>
