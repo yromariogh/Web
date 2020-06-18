@@ -5,11 +5,29 @@
     <title>Datos de Usuario</title>
 </head>
 <body>
+<h1>Rellena tu CV</h1>
 <form action="/login_menu.html">
     <label for="fname">Nombre</label> <br>
     <input type="text" id="fname" name="fname"><br>
     <label for="flname">Apellidos</label><br>
     <input type="text" id="flname" name="flname"><br>
+    <label for="fpass">Contraseña</label> <br>
+    <input type="text" id="fpass" name="fpass"><br><br>
+    <label for="fcpass">Confirme contraseña</label> <br>
+    <input type="text" id="fcpass" name="fcpass"><br>
+    <label for="idtype">Identificación</label><br>
+    <select id="idtype" name="idtype">
+        <option value="ti">TI</option>
+        <option value="cc">CC</option>
+    </select>
+    <label for="iddata"></label>
+    <input type="text" id="iddata" name="iddata"><br>
+    <p>Sexo</p>
+    <input type="radio" id="masc" name="masc">
+    <label for="masc">Masculino</label><br>
+    <input type="radio" id="fem" name="fem">
+    <label for="fem">Femenino</label><br>
+
 
 </form>
 </body>
