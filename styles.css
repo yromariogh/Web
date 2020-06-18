@@ -11,5 +11,10 @@ th
 img
 {
     float: right;
-    height: 200px;
+    height: 250px;
 } 
+
+.description
+{
+    font-size: 45px;
+}
