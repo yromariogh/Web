@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,9 +13,55 @@
 <body>
 <h1>Registro de usuario</h1>
 <form action="integrantes.html">
-    <div class="w-25 p-3">
-        <input type="text" class="form-control" name="id_usr"/>
+    <div class="w-50 p-3">
+
+        <label for="id_usr">Nombre de usuario</label>
+        <input type="text" class="form-control" id="id_usr" maxlength="11" b/>
+        <label for="exampleFormControlSelect2">Seleccionar país</label>
+        <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option>Alemania</option>
+            <option>Colombia</option>
+            <option>Ecuador</option>
+            <option>Estados Unidos</option>
+            <option>Francia</option>
+        </select>
+        <br>
+        <div class="form-row">
+            <div class="col">
+                <label for="nombre">Nombres</label>
+                <input type="text" class="form-control" id="nombre" maxlength="25" placeholder="Nombres"/>
+            </div>
+            <div class="col">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos" maxlength="25" placeholder="Apellidos"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" class="form-control" id="direccion" maxlength="45" placeholder="Calle, Carrera, etc."/>
+        </div>
+
+        <div class="form-group">
+            <label for="ccusuario">CCUSUARIO</label>
+            <input type="text" class="form-control" id="ccusuario" maxlength="20" placeholder="CCUSUARIO"/>
+        </div>
+
+        <div class="form-group">
+            <label for="ccpaswd">Contraseña</label>
+            <input type="password" class="form-control" id="ccpaswd"/>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="password" class="form-control" id="email" maxlength="120" placeholder="ejemplo@mail.com"/>
+        </div>
+        <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="password" class="form-control" id="telefono" maxlength="20" placeholder="6000000"/>
+        </div>
+        <br>
+        <input type="submit" class="btn btn-primary" value="Enviar">
     </div>
+
 </form>
 
 </body>
