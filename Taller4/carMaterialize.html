@@ -1,11 +1,164 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Car con Materialize</title>
+
+    <!--Import del JQuery-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Uso del JQuery para los Selects -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+        $('select').formSelect();
+        });
+    </script>
+
 </head>
+
 <body>
+    <div class="section container">
+        <h1>Registro del Auto (Materialize)</h1>
+        <form class="col s12">
+
+            <div class="row card-panel">
+
+                <div class="input-field col s12">
+                    <input type="text" id="id_coche">
+                    <label for="id_coche">Coche:</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <select id="id_movidoa">
+                        <option>Electricidad</option>
+                        <option>Gasolina</option>
+                        <option>Diesel</option>
+                        <option>Gas Natural</option>
+                    </select>
+                    <label for="id_movidoa">Movido a:</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <select  id="id_tipocoche">
+                        <option>Sedán</option>
+                        <option>Cupé</option>
+                        <option>Descapotable</option>
+                        <option>Roadster</option>
+                        <option>Todoterreno</option>
+                        <option>SUV</option>
+                        <option>Deportivo</option>
+                    </select>
+                    <label for="id_tipocoche">Tipo de coche:</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <select  id="id_estado">
+                        <option>En construcción</option>
+                        <option>En reparación</option>
+                        <option>En venta</option>
+                        <option>Funcionando</option>
+                        <option>Averiado</option>
+                    </select>
+                    <label for="id_estado">Estado:</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <select  id="id_marca">
+                        <option>Tesla</option>
+                        <option>Lamborghini</option>
+                        <option>Ferrari</option>
+                        <option>Renault</option>
+                    </select>
+                    <label for="id_marca">Marca:</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <select  id="id_user">
+                        <option>Usuario 1</option>
+                        <option>Usuario 2</option>
+                        <option>Usuario 3</option>
+                    </select>
+                    <label for="id_user">Usuario:</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="modelo">Modelo:</label>
+                    <textarea class="materialize-textarea" id="modelo" maxlength="60"></textarea>
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="anio">Año: </label>
+                    <input type="text"  id="anio" maxlength="4"> 
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="detalle">Detalle: </label>
+                    <textarea class="materialize-textarea" id="detalle"></textarea>
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="caja">Caja:</label>
+                    <input type="text"  id="caja">
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="motor">Motor:</label>
+                    <input type="text"  id="motor">
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="fechapub">Fecha de Publicación:</label>
+                    <input type="text"  id="fechapub" maxlength="10"> 
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="precio">Precio:</label>
+                    <input type="text"  id="precio">
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="moneda">Moneda: </label>
+                    <input type="text"  id="moneda" maxlength="10">
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="cc_pic01">CC_Pic01:</label>
+                    <textarea class="materialize-textarea" id="cc_pic01" maxlength="85"></textarea> 
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="cc_pic02">CC_Pic02:</label>
+                    <textarea class="materialize-textarea" id="cc_pic02" maxlength="85"></textarea> 
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="cc_pic03">CC_Pic03:</label>
+                    <textarea class="materialize-textarea" id="cc_pic03" maxlength="85"></textarea> 
+                </div>
+
+                <div class="input-field col s12">
+                    <label for="cc_destac">CC_Destacado: </label>
+                    <input type="text"  id="cc_destac" maxlength="2">
+                </div>
+
+                <button class="btn" type="submit">Enviar</button>
+            </div>
+
+        </form>
+    </div>
+
     
 </body>
+
 </html>
