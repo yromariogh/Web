@@ -21,7 +21,7 @@ function validarFormulario()
         return false;
     }
 
-    if ( (toLowerCase(direccion.value)).startsWith('cll') )
+    if ( !(/\bcll|cra|av|anv|trans/i.test(direccion.value)))
     {
         alert("La direccion no es válida")
         return false;
