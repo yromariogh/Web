@@ -24,7 +24,7 @@
 <body>
     <div class="section container">
         <h1 class="cyan-text">Registro del Usuario</h1>
-        <form class="col s12" action>
+        <form name="formulario" class="col s12" onsubmit="return validarFormulario();" >
             <div class="row card-panel">
                 <div class="input-field col s12">
                     <input type="text" id="id_usr" name="id_usr">
@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="input-field col s12">
-                    <button class="btn" type="submit">Enviar</button>
+                    <button class="btn" type="submit" >Enviar</button>
                 </div>
 
             </div>
