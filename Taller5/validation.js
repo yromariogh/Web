@@ -1,18 +1,18 @@
-var usuario = document.getElementById('id_usr')
-var pais = document.getElementById('id_pais')
-var nombre = document.getElementById('nombre')
-var apellido = document.getElementById('apellido')
-var direccion = document.getElementById('direccion')
-var ccusuario = document.getElementById('ccusuario')
-var ccpaswd = document.getElementById('ccpaswd')
-var email = document.getElementById('email')
-var telefono = document.getElementById('telefono')
+var usuario = document.getElementById('id_usr').value
+var pais = document.getElementById('id_pais').value
+var nombre = document.getElementById('nombre').value
+var apellido = document.getElementById('apellido').value
+var direccion = document.getElementById('direccion').value
+var ccusuario = document.getElementById('ccusuario').value
+var ccpaswd = document.getElementById('ccpaswd').value
+var email = document.getElementById('email').value
+var telefono = document.getElementById('telefono').value
 
 function validarFormulario()
 {
-    if (usuario.value === "") 
+    if (usuario === "" || usuario.length<=25) 
     {
-        alert("Escriba un nombre de Usuario")
+        alert("Escriba un usuario válido")
         return false;
     }
 
