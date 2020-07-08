@@ -10,10 +10,21 @@ var telefono = document.getElementById('telefono').value
 
 function validarFormulario()
 {
-    if (usuario === "" || usuario.length<=25) 
+    if (usuario === "" || usuario.length>25) 
     {
         alert("Escriba un usuario válido")
         return false;
     }
 
+    if (apellido === "" || apellido.length>25) 
+    {
+        alert("Escriba un apellido válido")
+        return false;
+    }
+
+    if ( toLowerCase(apellido).startsWith(cll) )
+    {
+        alert("La direccion no es válida")
+        return false;
+    }
 }
