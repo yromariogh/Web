@@ -10,7 +10,7 @@
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-     
+    
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     
@@ -29,13 +29,14 @@
         <form name="formulario" class="col s12" onsubmit="return validarFormulario();" >
             <div class="row card-panel">
                 <div class="input-field col s12">
-                    <label for="id_usr">Usuario:</label>
+                    <label class="" for="id_usr">Usuario:</label>
                     <input type="text" id="id_usr" name="id_usr">
-                    <small>Error message</small>
-                </div>
+                    <small>Error message</small> 
+                </div> <br> <br>
 
                 <div class="input-field col s12">
                     <select id="id_pais">
+                        <option value="xxx" selected>Seleccione un país</option>
                         <option value="ale">Alemania</option>
                         <option value="aus">Australia</option>
                         <option value="col">Colombia</option>
@@ -43,49 +44,56 @@
                         <option value="usa">Estados Unidos</option>
                     </select>
                     <label for="id_pais">Pais:</label>
-                </div>
+                    <small >Error message</small> 
+                </div> <br> <br>
 
                 <div class="input-field col s12">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre">
-                    <small>Error message</small>
-                </div>
+                    <small >Error message</small> 
+                </div> <br> <br>
 
                 <div class="input-field col s12">
                     <label for="apellido">Apellido:</label>
                     <input type="text" id="apellido">
-                    <small>Error message</small>
-                </div>
+                    <small >Error message</small>
+                </div> <br> <br>
 
                 <div class="input-field col s12">
                     <label for="direccion">Direccion:</label>
                     <input type="text" id="direccion">
-                    <small>Error message</small>
-                </div>
+                    <small >Error message</small>
+                </div> <br> <br>
 
                 <div class="input-field col s12">
                     <label for="ccusuario">CCUsuario:</label>
                     <input type="text" id="ccusuario">
-                    <small>Error message</small>
-                </div>
+                    <small >Error message</small>
+                </div> <br> <br>
 
                 <div class="input-field col s12">
                     <label for="ccpaswd">CCPassword:</label>
                     <input type="password" id="ccpaswd">
-                    <small>Error message</small>
-                </div>
+                    <small >Error message</small>
+                </div> <br> <br>
+
+                <div class="input-field col s12">
+                    <label for="ccpaswd2">Confirm Password:</label>
+                    <input type="password" id="ccpaswd2">
+                    <small >Error message</small>
+                </div> <br> <br>
 
                 <div class="input-field col s12">
                     <label for="email">Email:</label>
                     <input type="text" id="email">
-                    <small>Error message</small>
-                </div>
+                    <small >Error message</small>
+                </div> <br> <br>
 
                 <div class="input-field col s12">
                     <label for="telefono">Telefono:</label>
                     <input type="text" id="telefono">
-                    <small>Error message</small>
-                </div>
+                    <small >Error message</small>
+                </div> <br> <br>
 
                 <div class="input-field col s12">
                     <button class="btn" type="submit" >Enviar</button>
@@ -94,7 +102,9 @@
             </div>
 
         </form>
+        
     </div>
-    <script src="validation.js"></script>
+<script src="validation.js"></script>
+    
 </body>
 </html>
