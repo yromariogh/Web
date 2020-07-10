@@ -10,9 +10,11 @@
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+     
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <link rel="stylesheet" href="errorHandling.css">
 
     <!-- Uso del JQuery para los Selects -->
     <script type="text/javascript">
@@ -27,8 +29,9 @@
         <form name="formulario" class="col s12" onsubmit="return validarFormulario();" >
             <div class="row card-panel">
                 <div class="input-field col s12">
-                    <input type="text" id="id_usr" name="id_usr">
                     <label for="id_usr">Usuario:</label>
+                    <input type="text" id="id_usr" name="id_usr">
+                    <small>Error message</small>
                 </div>
 
                 <div class="input-field col s12">
@@ -43,38 +46,45 @@
                 </div>
 
                 <div class="input-field col s12">
-                    <input type="text" id="nombre">
                     <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre">
+                    <small>Error message</small>
                 </div>
 
                 <div class="input-field col s12">
-                    <input type="text" id="apellido">
                     <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido">
+                    <small>Error message</small>
                 </div>
 
                 <div class="input-field col s12">
-                    <input type="text" id="direccion">
                     <label for="direccion">Direccion:</label>
+                    <input type="text" id="direccion">
+                    <small>Error message</small>
                 </div>
 
                 <div class="input-field col s12">
-                    <input type="text" id="ccusuario">
                     <label for="ccusuario">CCUsuario:</label>
+                    <input type="text" id="ccusuario">
+                    <small>Error message</small>
                 </div>
 
                 <div class="input-field col s12">
-                    <input type="password" id="ccpaswd">
                     <label for="ccpaswd">CCPassword:</label>
+                    <input type="password" id="ccpaswd">
+                    <small>Error message</small>
                 </div>
 
                 <div class="input-field col s12">
-                    <input type="text" id="email">
                     <label for="email">Email:</label>
+                    <input type="text" id="email">
+                    <small>Error message</small>
                 </div>
 
                 <div class="input-field col s12">
-                    <input type="text" id="telefono">
                     <label for="telefono">Telefono:</label>
+                    <input type="text" id="telefono">
+                    <small>Error message</small>
                 </div>
 
                 <div class="input-field col s12">
