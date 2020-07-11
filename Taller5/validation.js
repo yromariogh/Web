@@ -14,6 +14,7 @@ function validarFormulario()
     if (username.value === "" || username.value.length < 10 || username.value.length > 20)
     {
         setErrorFor(username, "Bad username")
+        alert("SHit")
     }
     else
     {
@@ -117,14 +118,14 @@ function setErrorFor(input, message)
 {
 	const formControl = input.parentElement;
     const small = formControl.querySelector('small');
-    formControl.className = 'input-field col s12 error';
+    formControl.className = 'form-div error';
     small.innerText = message;
 }
 
 function setSuccessFor(input) 
 {
 	const formControl = input.parentElement;
-	formControl.className = 'input-field col s12 success';
+	formControl.className = 'form-div success';
 }
 
 function isEmail(email) 
