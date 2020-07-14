@@ -8,7 +8,7 @@
 
 body
 {
-    background-color: #8e44ad;
+    
     font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
@@ -17,13 +17,15 @@ body
     margin: 0;
 }
 
+
+
 .container
 {
     background-color: #f0f0f0;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    width: 400px;
+    width: 700px;
     max-width: 100%;
 
 }
@@ -32,7 +34,7 @@ body
 {
     border-bottom: 1px solid #f0f0f0;
     background-color: #f7f7f7;
-    padding: 20px 40px;
+    padding: 20px 30px;
 }
 
 .form
@@ -42,8 +44,7 @@ body
 
 .form-div
 {
-    margin-bottom: 10px;
-    padding-bottom: 20px;
+    margin-bottom: 15px;
     position: relative;
 }
 
@@ -141,8 +142,8 @@ body
 }
 
 .form button {
-	background-color: #8e44ad;
-	border: 2px solid #8e44ad;
+	background-color:  #1abc9c;
+	border: 2px solid  #1abc9c;
 	border-radius: 4px;
 	color: #fff;
 	display: block;
@@ -151,4 +152,19 @@ body
 	padding: 10px;
 	margin-top: 20px;
 	width: 100%;
+}
+
+.gustos-ocultar
+{
+    display: none;
+}
+
+.gustos-mostrar
+{
+    display: block;
+}
+
+#modeloFavorito
+{
+    width: 414px;
 }

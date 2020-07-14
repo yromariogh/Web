@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="user.css">
-    <title>UserCSS</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="multi-range.css">
+    <title>UserCSS1</title>
 </head>
+
 <body>
-<div class="container">
-    <div class="header">
-        <h2>Registro</h2>
-    </div>
-    <form name="form" class="form" onsubmit="return validarFormulario();" >
-        <div class="form-div">
+    <div class="container">
+        <div class="header">
+            <h2>Registro</h2>
+        </div>
+
+        <form name="form" class="form" onsubmit="return validarFormulario();">
+            <div class="form-div">
                 <label class="" for="id_usr">Usuario:</label>
                 <input type="text" id="id_usr" name="id_usr">
-                <small>Error message</small> 
+                <small>Error message</small>
             </div>
 
             <div class="form-div">
@@ -28,60 +32,161 @@
                     <option value="esp">España</option>
                     <option value="usa">Estados Unidos</option>
                 </select>
-                <small >Error message</small> 
+                <small>Error message</small>
             </div>
+
             <div class="form-div">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre">
-                <small >Error message</small> 
+                <small>Error message</small>
             </div>
 
             <div class="form-div">
                 <label for="apellido">Apellido:</label>
                 <input type="text" id="apellido">
-                <small >Error message</small>
+                <small>Error message</small>
             </div>
 
             <div class="form-div">
                 <label for="direccion">Direccion:</label>
                 <input type="text" id="direccion">
-                <small >Error message</small>
+                <small>Error message</small>
             </div>
 
             <div class="form-div">
                 <label for="ccusuario">CCUsuario:</label>
                 <input type="text" id="ccusuario">
-                <small >Error message</small>
+                <small>Error message</small>
             </div>
 
             <div class="form-div">
                 <label for="ccpaswd">CCPassword:</label>
                 <input type="password" id="ccpaswd">
-                <small >Error message</small>
+                <small>Error message</small>
             </div>
 
             <div class="form-div">
                 <label for="ccpaswd2">Confirm Password:</label>
                 <input type="password" id="ccpaswd2">
-                <small >Error message</small>
+                <small>Error message</small>
             </div>
 
             <div class="form-div">
                 <label for="email">Email:</label>
                 <input type="text" id="email">
-                <small >Error message</small>
+                <small>Error message</small>
             </div>
 
             <div class="form-div">
                 <label for="telefono">Telefono:</label>
                 <input type="text" id="telefono">
-            <small >Error message</small>
-        </div>
-        <div class="form-div">
-            <button class="button" type="submit" >Enviar</button>
-        </div>
-    </form>
-    
-</div>
-<script src="validation.js"></script>
+                <small>Error message</small>
+            </div>
+
+            <div>
+                <p>¿Le gustaría proveer sus gustos?</p>
+                <div>
+                    <input type="radio" id="si" name="gustosRadio" value="si">
+                    <label> Si </label>
+                </div>
+                <div>
+                    <input type="radio" id="no" name="gustosRadio" value="no" checked>
+                    <label> No </label>
+                </div>
+            </div>
+
+            <div class="gustos-ocultar" id="id_divGustos">
+                <br>
+                <div class="form-div">
+                    <label for="id_color">Color favorito:</label>
+                    <select id="id_color">
+                        <option value="xxx" selected>Seleccione su color favorito</option>
+                        <option value="ama">Amarillo</option>
+                        <option value="azu">Azul</option>
+                        <option value="ver">Verde</option>
+                        <option value="roj">Rojo</option>
+                        <option value="ros">Rosa</option>
+                        <option value="bla">Blanco</option>
+                        <option value="neg">Negro</option>
+                    </select>
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="id_marca">Marca favorita:</label>
+                    <select id="id_marca">
+                        <option value="xxx" selected>Seleccione su marca favorita</option>
+                        <option value="tes">Tesla</option>
+                        <option value="lam">Lamborghini</option>
+                        <option value="fer">Ferrari</option>
+                        <option value="ren">Renault</option>
+                    </select>
+                    <small>Error message</small>
+                </div>
+
+                <div class="form-div">
+                    <label for="id_estilo">Estilo favorito:</label>
+                    <select id="id_estilo">
+                        <option value="xxx" selected>Seleccione su modelo favorito</option>
+                        <option value="sed">Sedán</option>
+                        <option value="cup">Cupé</option>
+                        <option value="des">Descapotable</option>
+                        <option value="roa">Roadster</option>
+                        <option value="tod">Todoterreno</option>
+                        <option value="suv">SUV</option>
+                        <option value="dep">Deportivo</option>
+                    </select>
+                    <small>Error message</small>
+                </div>
+
+                <label>Seleccione el rango de precios en Millones:</label>
+                <div slider id="slider-distance">
+                    <div>
+                        <div inverse-left style="width:70%;"></div>
+                        <div inverse-right style="width:70%;"></div>
+                        <div range style="left:30%;right:40%;"></div>
+                        <span thumb style="left:30%;"></span>
+                        <span thumb style="left:60%;"></span>
+                        <div sign style="left:30%;">
+                            <span id="value">30</span>
+                        </div>
+                        <div sign style="left:60%;">
+                            <span id="value">60</span>
+                        </div>
+                    </div>
+                    <input type="range" tabindex="0" value="30" max="100" min="0" step="1" oninput="
+                        this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
+                        var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                        var children = this.parentNode.childNodes[1].childNodes;
+                        children[1].style.width=value+'%';
+                        children[5].style.left=value+'%';
+                        children[7].style.left=value+'%';children[11].style.left=value+'%';
+                        children[11].childNodes[1].innerHTML=this.value;" />
+
+                    <input type="range" tabindex="0" value="60" max="100" min="0" step="1" oninput="
+                        this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
+                        var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+                        var children = this.parentNode.childNodes[1].childNodes;
+                        children[3].style.width=(100-value)+'%';
+                        children[5].style.right=(100-value)+'%';
+                        children[9].style.left=value+'%';children[13].style.left=value+'%';
+                        children[13].childNodes[1].innerHTML=this.value;" />
+                </div>
+
+                <p>
+                    <label for="modeloFavorito">Modelo favorito:</label>
+                    <input type="text" id="modeloFavorito" disabled readonly>
+                    <input type="button" value="Actualizar" onclick="setFavoriteModel()">
+                </p>
+
+            </div>
+
+            <div class="form-div">
+                <button class="button" type="submit">Continuar</button>
+            </div>
+
+        </form>
+
+    </div>
+    <script src="validation.js"></script>
 </body>
