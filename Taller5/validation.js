@@ -14,7 +14,9 @@ const marca = document.getElementById('id_marca')
 const estilo = document.getElementById('id_estilo')
 const divGustos = document.getElementById('id_divGustos')
 
+
 function validarFormulario() {
+    errores = 0;
     if (username.value === "") {
         setErrorFor(username, "Ingrese un username")
     } else if (username.value.length < 10 || username.value.length > 20) {
@@ -101,8 +103,6 @@ function validarFormulario() {
         setSuccessFor(ccusuario)
     }
 
-    
-
     for (var i = 0, length = gustosRadio.length; i < length; i++) 
     {
         if (gustosRadio[i].checked) 
@@ -137,12 +137,19 @@ function validarFormulario() {
         }
     }
 
-    
-
-    return false;
+    if (errores>0)
+    {
+        return false;
+    }
+    else if (errores===0)
+    {
+        alert("Se han registrado sus respuestas. Gracias por participar.")
+        return true;
+    }
 }
 
 function setErrorFor(input, message) {
+    errores++;
     const formControl = input.parentElement;
     const small = formControl.querySelector('small');
     formControl.className = 'form-div error';
