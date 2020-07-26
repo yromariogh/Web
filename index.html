@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#div1").load('https://jsonplaceholder.typicode.com/users');
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
     <title>Menu</title>
 </head>
+
 <body>
     <div class="menu">
         <div class="header">
@@ -54,13 +74,13 @@
                     <input type="password" id="ccpaswd">
                     <small>Error message</small>
                 </div>
-    
+
                 <div class="form-div">
                     <label for="ccpaswd2">Confirmar Contraseña:</label>
                     <input type="password" id="ccpaswd2">
                     <small>Error message</small>
                 </div>
-    
+
                 <div>
                     <p>¿Ha sufrido enfermedades contagiosas?</p>
                     <div>
@@ -102,8 +122,29 @@
             <div class="title">
                 <h4>Grilla</h4>
             </div>
+            <input id="myInput" type="text" placeholder="Search..">
+            <br><br>
+            <div id="datosPersona"></div>
+
+            <button type="button" id="visualizar">
+                Visualizar
+            </button>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    
+                </tbody>
+            </table>
         </div>
     </div>
     <script src="scripts.js"></script>
 </body>
+
 </html>

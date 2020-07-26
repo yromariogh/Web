@@ -61,48 +61,39 @@ function validarFormulario() {
 
     const pattern = new RegExp('^[A-Z]+$', 'i');
     if (username.value == "") {
-        setErrorFor(username, "Ingrese su Usuario")
-    }  else if (!pattern.test(username.value)) {
-        setErrorFor(username, "Su Usuario no debe contener caracteres extraños")
+        setErrorFor(username, "Ingrese su usuario")
+    } else if (!pattern.test(username.value)) {
+        setErrorFor(username, "Su usuario no debe contener caracteres extraños")
     } else {
         setSuccessFor(username)
     }
 
-    for (var i = 0, length = eRadio.length; i < length; i++) 
-    {
-        if (eRadio[i].checked) 
-        {
-            if (eRadio[i].value == "si")
-            {
+    for (var i = 0, length = eRadio.length; i < length; i++) {
+        if (eRadio[i].checked) {
+            if (eRadio[i].value == "si") {
                 showSection(divEnfermedades, "Seleccione las enfermedades contagiosas que ha sufrido.")
                 //Ahora se evaluan las entradas de gustos
-                
-            }
-            else if (gustosRadio[i].value == "no")
-            {
+
+            } else if (gustosRadio[i].value == "no") {
                 hideSection(divEnfermedades)
             }
             break;
         }
     }
 
-    if (errores>0)
-    {
+    if (errores > 0) {
         return false;
-    }
-    else if (errores===0)
-    {
+    } else if (errores === 0) {
         alert("Se han registrado sus respuestas. Gracias por participar.")
         return true;
     }
 }
 
-$(function(){
+$(function () {
     $('#nacimiento').on('change', calcularEdad);
 });
 
-function calcularEdad() 
-{
+function calcularEdad() {
     fecha = $(this).val();
     var hoy = new Date();
     var cumpleanos = new Date(fecha);
@@ -112,7 +103,7 @@ function calcularEdad()
     if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
         edad--;
     }
-    $('#age').val(edad+" años");
+    $('#age').val(edad + " años");
 }
 
 function setErrorFor(input, message) {
@@ -139,3 +130,22 @@ function setSuccessFor(input) {
 function isEmail(email) {
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+var requestURL = 'https://jsonplaceholder.typicode.com/users';
+
+$('#visualizar').on('click', function () {
+    $(this).hide()
+    $.ajax({
+        url: requestURL,
+        success: function (data) {
+            $datos = $('#myTable');
+            for (var i = 0; i < data.length; i++) {
+                var $tr = $('<tr></tr>');
+                $tr.append('<td>' + data[i].name + '</td>');
+                $tr.append('<td>' + data[i].username + '</td>');
+                $tr.append('<td>' + data[i].email + '</td>');
+                $datos.append($tr);
+            }
+        }
+    });
+});
