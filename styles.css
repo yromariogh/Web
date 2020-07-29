@@ -40,6 +40,7 @@ body
     border-bottom: 1px solid #f0f0f0;
     background-color: #f0f0f0;
     padding: 0px 320px;
+    text-align: center;
 }
 
 .form
@@ -186,4 +187,9 @@ td, th
 tr:nth-child(even) 
 {
     background-color: #dddddd;
+}
+
+div.center
+{
+    margin: auto;
 }
