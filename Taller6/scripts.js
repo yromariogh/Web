@@ -72,9 +72,8 @@ function validarFormulario() {
         if (eRadio[i].checked) {
             if (eRadio[i].value == "si") {
                 showSection(divEnfermedades, "Seleccione las enfermedades contagiosas que ha sufrido.")
-                //Ahora se evaluan las entradas de gustos
 
-            } else if (gustosRadio[i].value == "no") {
+            } else if (eRadio[i].value == "no") {
                 hideSection(divEnfermedades)
             }
             break;
