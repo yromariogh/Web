@@ -4,9 +4,6 @@ const ccpaswd = document.getElementById('ccpaswd')
 const ccpaswd2 = document.getElementById('ccpaswd2')
 const email = document.getElementById('email')
 const username = document.getElementById('id_usr')
-const eRadio = document.getElementsByName('eRadio')
-const estilo = document.getElementById('id_estilo')
-const divEnfermedades = document.getElementById('id_divEnfermedades')
 
 
 function validarFormulario() {
@@ -137,19 +134,3 @@ function setMunicipios(municipios){
     
 }
 
-$('#visualizar').on('click', function () {
-    $(this).hide()
-    $.ajax({
-        url: requestURL,
-        success: function (data) {
-            $datos = $('#myTable');
-            for (var i = 0; i < data.length; i++) {
-                var $tr = $('<tr></tr>');
-                $tr.append('<td>' + data[i].name + '</td>');
-                $tr.append('<td>' + data[i].username + '</td>');
-                $tr.append('<td>' + data[i].email + '</td>');
-                $datos.append($tr);
-            }
-        }
-    });
-});
