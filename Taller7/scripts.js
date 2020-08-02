@@ -5,10 +5,6 @@ const ccpaswd = document.getElementById('ccpaswd')
 const ccpaswd2 = document.getElementById('ccpaswd2')
 const email = document.getElementById('email')
 const telefono = document.getElementById('telefono')
-const eRadio = document.getElementsByName('eRadio')
-const estilo = document.getElementById('id_estilo')
-const divEnfermedades = document.getElementById('id_divEnfermedades')
-
 
 function validarFormulario() {
     errores = 0;
