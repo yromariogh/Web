@@ -1,9 +1,13 @@
 const nombre = document.getElementById('nombre')
 const apellido = document.getElementById('apellido')
+const username = document.getElementById('id_usr')
 const ccpaswd = document.getElementById('ccpaswd')
 const ccpaswd2 = document.getElementById('ccpaswd2')
 const email = document.getElementById('email')
-const username = document.getElementById('id_usr')
+const telefono = document.getElementById('telefono')
+const eRadio = document.getElementsByName('eRadio')
+const estilo = document.getElementById('id_estilo')
+const divEnfermedades = document.getElementById('id_divEnfermedades')
 
 
 function validarFormulario() {
@@ -23,6 +27,15 @@ function validarFormulario() {
         setErrorFor(apellido, "Su apellido debe tener maximo 25 caracteres")
     } else {
         setSuccessFor(apellido)
+    }
+
+    const pattern = new RegExp('^[A-Z]+$', 'i');
+    if (username.value == "") {
+        setErrorFor(username, "Ingrese su usuario")
+    } else if (!pattern.test(username.value)) {
+        setErrorFor(username, "Su usuario no debe contener caracteres extraños")
+    } else {
+        setSuccessFor(username)
     }
 
     if (ccpaswd.value === "") {
@@ -55,16 +68,12 @@ function validarFormulario() {
         setSuccessFor(ccpaswd2)
     }
 
-
-    const pattern = new RegExp('^[A-Z]+$', 'i');
-    if (username.value == "") {
-        setErrorFor(username, "Ingrese su usuario")
-    } else if (!pattern.test(username.value)) {
-        setErrorFor(username, "Su usuario no debe contener caracteres extraños")
+    if (telefono.value.length != 7 && telefono.value.length != 10) 
+    {
+        setErrorFor(telefono, "Su numero debe tener 7 o 10 caracteres (fijo ó móvil)")
     } else {
-        setSuccessFor(username)
+        setSuccessFor(telefono)
     }
-
 
     if (errores > 0) {
         return false;
