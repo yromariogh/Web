@@ -6,46 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts.js"></script>
-
-    
-
-    <script>
-        var requestURL = 'https://www.datos.gov.co/resource/xdk5-pm3f.json';
-        var select = document.getElementById("residence");
-    
-        fetch(requestURL)
-            .then(data => data.json())
-            .then(data => {
-                var dpto = data;
-                
-                var dptos = [];
-                dpto.forEach(item => {
-                    if (dptos.length == 0){
-                        dptos.push(item.departamento)
-                    }
-                    else{
-                        if (!dptos.includes(item.departamento)){
-                            dptos.push(item.departamento);
-                        }
-                    }
-                    
-                });
-                if (dptos.length > 0) {
-                    setDepartamentos(dptos)
-                }
-
-            })
-            function setDepartamentos(dptos){
-                var html = '<option> </option>';
-                dptos.forEach(item =>{
-                    html += '<option>' + item + '</option>';
-                });
-                document.getElementById('residence').innerHTML = html;
-            }
-        
-
-    </script>
     <title>Menu</title>
 </head>
 
@@ -62,7 +22,7 @@
 
                 <div class="form-div">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre">
+                    <input type="text" id="nombre" name="nombre">
                     <small>Error message</small>
                 </div>
 
@@ -111,15 +71,17 @@
                 <div class="form-div">
                     <label for="residence">Lugar de Residencia</label>
                     <select name="dptos" id="residence" onchange="loadMunicipios()">
-                        
+
                     </select>
+                    <small>Error message</small>
                 </div>
 
                 <div class="inv" id="invisible">
                     <label for="municipios">Municipios</label>
                     <select name="municipios" id="municipios">
-                        
+
                     </select>
+                    <small>Error message</small>
                 </div>
 
                 <div class="form-div">
@@ -127,7 +89,41 @@
                 </div>
 
             </form>
+            <script src="scripts.js"></script>
+            <script>
+                var requestURL = 'https://www.datos.gov.co/resource/xdk5-pm3f.json';
+                var select = document.getElementById("residence");
 
+                fetch(requestURL)
+                    .then(data => data.json())
+                    .then(data => {
+                        var dpto = data;
+
+                        var dptos = [];
+                        dpto.forEach(item => {
+                            if (dptos.length == 0) {
+                                dptos.push(item.departamento)
+                            } else {
+                                if (!dptos.includes(item.departamento)) {
+                                    dptos.push(item.departamento);
+                                }
+                            }
+
+                        });
+                        if (dptos.length > 0) {
+                            setDepartamentos(dptos)
+                        }
+
+                    })
+
+                function setDepartamentos(dptos) {
+                    var html = '<option value="xxx" selected> </option>';
+                    dptos.forEach(item => {
+                        html += '<option>' + item + '</option>';
+                    });
+                    document.getElementById('residence').innerHTML = html;
+                }
+            </script>
 </body>
 
 </html>
