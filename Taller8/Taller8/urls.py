@@ -6,6 +6,6 @@ from django.conf.urls import include
 from taller import views
 
 urlpatterns = [
-    path('taller/', include('taller.urls')),
+    path('', include('taller.urls')),
     path('admin/', admin.site.urls),
 ]

@@ -8,6 +8,7 @@
 
     {% load static %}
 
+    <script src="{% static 'taller/scripts.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'taller/styles.css' %}">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -23,7 +24,7 @@
             <div class="title">
                 <h4>Registro</h4>
             </div>
-            <form name="form1" class="form" id="formularioRegistro" method="POST" action=".">
+            <form name="form1" class="form" id="formularioRegistro" method="POST" onsubmit="return validarFormulario();">
         
                 {% csrf_token %}
                 <div class="form-div">
@@ -37,12 +38,12 @@
                 </div>
 
                 <div class="form-div">
-                    {{ form.labels.fechanacimiento }} {{ form.fechanacimiento }}
+                    {{ form.fechanacimiento.label_tag }} {{ form.fechanacimiento }}
                     <small>Error message</small>
                 </div>
 
                 <div class="form-div">
-                    {{ form.labels.tipodocumento }} {{ form.tipodocumento }}
+                    {{ form.tipodocumento.label_tag }} {{ form.tipodocumento }}
                     <small>Error message</small>
                 </div>
 
@@ -52,7 +53,7 @@
                 </div>
 
                 <div class="form-div">
-                    {{ form.labels.lugarresidencia }} {{ form.lugarresidencia }}
+                    {{ form.lugarresidencia.label_tag }} {{ form.lugarresidencia }}
                     <small>Error message</small>
                 </div>
 

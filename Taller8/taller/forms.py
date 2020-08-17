@@ -7,18 +7,17 @@ class PersonaForm(forms.ModelForm):
         fields = ( 'nombres', 'apellidos', 'documento', 'fechanacimiento', 'email', 'telefono', 'usuario', 'password', 'tipodocumento', 'lugarresidencia')
         
         widgets = {
-            'nombres' : forms.widgets.TextInput(attrs={'maxlength' : 30, 'type' : 'text'}),
-            'apellidos' : forms.widgets.TextInput(attrs={'maxlength' : 30, 'type' : 'text'}),
-            'documento' : forms.widgets.TextInput(attrs={'maxlength' : 9, 'type' : 'number'}),
-            'fechanacimiento' : forms.widgets.DateInput(attrs={'type':'date'}),
+            'nombres' : forms.widgets.TextInput(attrs={'maxlength' : 25, 'type' : 'text'}),
+            'apellidos' : forms.widgets.TextInput(attrs={'maxlength' : 25, 'type' : 'text'}),
+            'documento' : forms.widgets.TextInput(attrs={'maxlength' : 10, 'type' : 'number'}),
+            'fechanacimiento' : forms.widgets.DateInput(attrs={'type':'date', 'default': '2000-01-01'}),
             'email' : forms.widgets.TextInput(attrs={'maxlength' : 30, 'type' : 'text'}),
             'telefono' : forms.widgets.TextInput(attrs={'maxlength' : 10, 'type' : 'number'}),
             'usuario' : forms.widgets.TextInput(attrs={'maxlength' : 30, 'type' : 'text'}),
-            'password' : forms.widgets.TextInput(attrs={'maxlength' : 30, 'type' : 'text'}), 
-
+            'password' : forms.widgets.TextInput(attrs={'maxlength' : 20, 'type' : 'text'}), 
         }
 
-    labels ={
+        labels ={
             'nombres' : 'Ingrese su nombre',
             'apellidos' : 'Ingrese sus apellidos:',
             'documento' : 'Numero de documento:',
@@ -30,5 +29,4 @@ class PersonaForm(forms.ModelForm):
             'usuario' : 'Usuario' ,
             'password' : 'Contraseña' 
         }
-    tipodocumento = forms.ModelChoiceField(queryset= tipodocumento.objects.all())
-    lugarresidencia = forms.ModelChoiceField(queryset= ciudad.objects.all())
+    

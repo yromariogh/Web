@@ -3,5 +3,5 @@ from django.urls import path
 from taller import views
 
 urlpatterns = [
-    path('templates/', views.index, name='index'),
+    path('', views.index, name='index'),
     ]
