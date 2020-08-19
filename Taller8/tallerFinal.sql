@@ -104,7 +104,7 @@ DROP TABLE IF EXISTS `auth_user`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `auth_user` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `password` varchar(128) NOT NULL,
+  `password` varchar(256) NOT NULL,
   `last_login` datetime(6) DEFAULT NULL,
   `is_superuser` tinyint(1) NOT NULL,
   `username` varchar(150) NOT NULL,

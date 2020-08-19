@@ -22,7 +22,7 @@
             <div class="title">
                 <h4>Registro</h4>
             </div>
-            <form name="form1" class="form" id="formularioRegistro" action="." onsubmit="return validarFormulario()">
+            <form name="form1" class="form" id="formularioRegistro" action="." method="POST" onsubmit="return validarFormulario()">
 
                 {% csrf_token %}
                 <div class="form-div">
