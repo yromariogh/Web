@@ -10,7 +10,7 @@ class PersonaForm(forms.ModelForm):
             'nombres' : forms.widgets.TextInput(attrs={'maxlength' : 25, 'type' : 'text'}),
             'apellidos' : forms.widgets.TextInput(attrs={'maxlength' : 25, 'type' : 'text'}),
             'documento' : forms.widgets.TextInput(attrs={'maxlength' : 10, 'type' : 'number'}),
-            'fechanacimiento' : forms.widgets.DateInput(attrs={'type':'date', 'default': '2000-01-01'}),
+            'fechanacimiento' : forms.widgets.DateInput(attrs={'type':'date'}),
             'email' : forms.widgets.TextInput(attrs={'maxlength' : 30, 'type' : 'text'}),
             'telefono' : forms.widgets.TextInput(attrs={'maxlength' : 10, 'type' : 'number'}),
             'usuario' : forms.widgets.TextInput(attrs={'maxlength' : 30, 'type' : 'text'}),
@@ -18,7 +18,7 @@ class PersonaForm(forms.ModelForm):
         }
 
         labels ={
-            'nombres' : 'Ingrese su nombre',
+            'nombres' : 'Ingrese su nombre:',
             'apellidos' : 'Ingrese sus apellidos:',
             'documento' : 'Numero de documento:',
             'fechanacimiento' : 'Fecha de nacimiento:',
@@ -29,4 +29,3 @@ class PersonaForm(forms.ModelForm):
             'usuario' : 'Usuario' ,
             'password' : 'Contraseña' 
         }
-    

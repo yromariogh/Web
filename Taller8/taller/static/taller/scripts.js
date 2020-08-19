@@ -10,8 +10,8 @@ function validarFormulario() {
     errores = 0;
 
     const pattern = new RegExp("^[A-Z]+$", "i");
-    if (!pattern.test(usuari.value)) {
-        setErrorFor(usuaro, "Su usuario no debe contener caracteres extraños");
+    if (!pattern.test(usuario.value)) {
+        setErrorFor(usuario, "Su usuario no debe contener caracteres extraños");
     } else {
         setSuccessFor(usuario);
     }
