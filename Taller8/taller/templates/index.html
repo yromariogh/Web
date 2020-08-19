@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,7 +9,7 @@
 
     <script src="{% static 'taller/scripts.js' %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'taller/styles.css' %}">
-
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Registro con Django</title>
 </head>
@@ -24,8 +23,8 @@
             <div class="title">
                 <h4>Registro</h4>
             </div>
-            <form name="form1" class="form" id="formularioRegistro" method="POST" onsubmit="return validarFormulario();">
-        
+            <form name="form1" class="form" id="formularioRegistro" onsubmit="return validarFormulario()">
+
                 {% csrf_token %}
                 <div class="form-div">
                     {{ form.nombres.label_tag }} {{ form.nombres }}
@@ -71,7 +70,7 @@
                     {{ form.usuario.label_tag }} {{ form.usuario }}
                     <small>Error message</small>
                 </div>
-                
+
                 <div class="form-div">
                     {{ form.password.label_tag }} {{ form.password }}
                     <small>Error message</small>
@@ -80,10 +79,16 @@
                 <div class="form-div">
                     <input type='submit' value="Create">
                 </div>
-        
-            
 
             </form>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+
 </body>
 
 </html>
