@@ -49,9 +49,15 @@ function validarFormulario() {
         setSuccessFor(lugarResidencia);
     }
 
+    var hoy=new Date();
+    hoy.setHours(0,0,0,0);
     if(nacimiento.value=="" || nacimiento.value==null)
     {
         setErrorFor(nacimiento, "Seleccione su fecha de nacimiento");
+    }
+    else if(Date.parse(hoy)<Date.parse(nacimiento.value))
+    {
+        setErrorFor(nacimiento, "No es posible seleccionar esa fecha de nacimiento");
     }
     else 
     {
