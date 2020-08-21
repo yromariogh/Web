@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Get countries</title>
+
+    <style type='text/css'>
+        div {
+            padding: 2.5%;
+        }
+        input,
+        select {
+            border-radius: 5px;
+            padding      : 9px;
+        }
+        select {
+            width: 100%
+        }
+
+        .content {
+            margin: 5% auto;
+            width : 80%;
+        }
+        .content div {
+            border-radius: 9px;
+            border       : 2px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <div class='content'>
+        <select id='regions'>
+            <option>Selecciona un continente:</option>
+            <option value='Americas'>Americas</option>
+            <option value='Asia'>Asia</option>
+            <option value='Europe'>Europe</option>
+            <option value='Oceania'>Oceania</option>
+            <option value='Polar'>Polar</option>
+        </select>
+
+
+        <div id='results' style='margin-top: 32px'>
+            <h3 id='selected-region'></h3>
+            <ul id='founded-countries'></ul>
+        </div>
+    </div>
+
+    <script type='text/javascript'>
+
+        ////////////////////////////////////////////////////////////////
+        // function declarations
+
+        function loadCountries()
+        {
+            var select = document.getElementById('regions');
+            var region = select.options[select.selectedIndex].value;
+
+            var url = 'https://restcountries.eu/rest/v2/all';
+            fetch(url)
+                .then(data => data.json())
+                .then(data => {
+                    var countries = data;
+
+                    var regional_countries = [];
+                    countries.forEach(item => {
+                        if (item.region == region) {
+                            regional_countries.push(item.name);
+                        }
+                    });
+
+                    if (regional_countries.length > 0) {
+                        setTheCountries(regional_countries, region);
+                    }
+                });
+        }
+
+        function setTheCountries(countries, region)
+        {
+            var result_title = 'Hay ' + countries.length
+                + ' países en "' + region + '"';
+
+            var html = '';
+            countries.forEach(item => {
+                html += '<li>' + item + '</li>';
+            });
+
+            document.getElementById('selected-region').innerHTML = result_title;
+            document.getElementById('founded-countries').innerHTML = html;
+        }
+
+
+        ////////////////////////////////////////////////////////////////
+        // add event listeners
+
+        document.querySelector('#regions')
+            .addEventListener('change', loadCountries);
+    </script>
+</body>
+</html>

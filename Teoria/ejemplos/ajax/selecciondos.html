@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>otro</title>
+
+</head>
+<body>
+<select onchange="getPaises(this)">
+  <option value="">Selecciona Region</option>
+  <option value="Africa">Africa</option>
+  <option value="Americas">Americas</option>
+  <option value="Asia">Asia</option>
+  <option value="Europe">Europe</option>
+  <option value="Oceania">Oceania</option>
+</select>
+<select id="pais" onchange="getContrie(this)">
+  <option value="">Selecciona Pais</option>
+</select>
+
+ <div id='results' style='margin-top: 32px'>
+            <h3 id='selected-region'></h3>
+            <ul id='founded-countries'></ul>
+            <img id='bandera'src="">
+  </div>
+
+  
+
+</body>
+<script type="text/javascript">
+	function getPaises(elSelect){
+
+  console.log(elSelect.value)
+  let url = 'http://restcountries.eu/rest/v2/region/'
+  fetch(url+elSelect.value)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    myJson.forEach(item => {
+       var paisOption = document.createElement("option");
+       paisOption.className = 'pais_option'
+       paisOption.value = item.name
+       paisOption.text = item.name
+       pais.prepend(paisOption)
+    })
+  });
+}
+function getContrie(eSelect){
+  console.log(eSelect.value)
+  let url = 'https://restcountries.eu/rest/v2/name/'+eSelect.value
+  fetch(url)
+  .then(function(response2) {
+    return response2.json();
+  })
+  .then(function(mypJson) {
+  	var regional_countries = [];
+  	mypJson.forEach(item => {
+        if (item.name == eSelect.value) {
+            regional_countries.push(item.translations);
+        }
+         document.getElementById('bandera').src = item.flag;
+    });
+
+    if (regional_countries.length > 0) {
+        setTheCountries(regional_countries, eSelect.value);
+    }
+  });
+	 function setTheCountries(countries, region)
+        {
+            var result_title = 'Hay ' + countries.length
+                + ' capital en "' + region + '"';
+
+            var html = '';
+            console.log(countries[0]);
+            countries[0].forEach(item => {
+                html += '<li>' + item + '</li>';        
+            });
+
+            document.getElementById('selected-region').innerHTML = result_title;
+            document.getElementById('founded-countries').innerHTML = html;
+        }
+                    
+}
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+		function separateQueryString(){
+		queryString=location.search.substr(1);
+		pares=queryString.split('&');
+		$_GET=[];
+		for(ii in pares){
+		tmp=pares[ii].split('=');
+		$_GET[tmp[0]]=unescape(tmp[1].split('+').join(''));
+		}
+		//for (ii in $_GET){
+		// Si quieres mostrar todas las variables en un Div.
+		//document.getElementById(‘nombre_Div’).innerHTML+=$_GET[ii]+’<br />’;
+		//}
+		document.getElementById('text_1').value=$_GET['campo_1'];
+		document.getElementById('text_2').value=$_GET['campo_2'];
+		}
+		window.onload=separateQueryString;
+</script>
+	<title>
+		retre
+	</title>
+</head>
+<body>
+	<div id="nombre_Div"> <div/>
+	<input id="text_1" type="text">
+	<input id="text_2" type="text">
+</body>
+</html>

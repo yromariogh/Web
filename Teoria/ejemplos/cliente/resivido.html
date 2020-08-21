@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<link rel="stylesheet"  type="text/css" href="css/adminlte.min.css">
+	<script>
+		function separateQueryString(){
+		queryString=location.search.substr(1);
+		pares=queryString.split('&');
+		$_GET=[];
+		for(ii in pares){
+		tmp=pares[ii].split('=');
+		$_GET[tmp[0]]=unescape(tmp[1].split('+').join(''));
+		}
+		//for (ii in $_GET){
+		// Si quieres mostrar todas las variables en un Div.
+		//document.getElementById(‘nombre_Div’).innerHTML+=$_GET[ii]+’<br />’;
+		//}
+		document.getElementById('imag').src ='images/'+$_GET['image']+'.png'
+		document.getElementById('nombre').innerHTML=$_GET['alimento'];
+		document.getElementById('grasas').innerHTML=$_GET['grasas'];
+		document.getElementById('calorias').innerHTML=$_GET['calorias'];
+		document.getElementById('carbohidratos').innerHTML=$_GET['carbohidratos'];
+		document.getElementById('proteina').innerHTML=$_GET['proteina'];
+
+		}
+		window.onload=separateQueryString;
+</script>
+	<title>
+		retre
+	</title>
+</head>
+<body>
+	<div class="container-fluid" >
+		<div class="row mb-2" >
+			<div class="card card-widget widget-user-2">
+              <!-- Add the bg color to the header using any of the bg-* classes -->
+              <div class="widget-user-header bg-warning">
+                <div class="widget-user-image">
+                  <img id='imag' class="img-circle elevation-2" src="img/user7-128x128.jpg" alt="User Avatar">
+                </div>
+                <!-- /.widget-user-image -->
+                <h3 id='nombre'class="widget-user-username">Nadia Carmichael</h3>
+                <h5 class="widget-user-desc">Alimento</h5>
+              </div>
+              <div class="card-footer p-0">
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      Calorías (kCal) <span id='calorias' class="float-right badge bg-primary">31</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      Grasas (g) <span id='grasas' class="float-right badge bg-info">5</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      Proteína (g) <span id='proteina' class="float-right badge bg-success">12</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      Carbohidratos (g) <span id='carbohidratos' class="float-right badge bg-danger">842</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+			
+		</div>
+		
+	</div>
+	
+</body>
+</html>

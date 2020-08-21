@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sentido Web - AJAX</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+function ajaxobj() {
+	try {
+		_ajaxobj = new ActiveXObject("Msxml2.XMLHTTP");
+	} catch (e) {
+		try {
+			_ajaxobj = new ActiveXObject("Microsoft.XMLHTTP");
+		} catch (E) {
+			_ajaxobj = false;
+		}
+	}
+   
+	if (!_ajaxobj && typeof XMLHttpRequest!='undefined') {
+		_ajaxobj = new XMLHttpRequest();
+	}
+	
+	return _ajaxobj;
+}
+
+function holaMundo () {
+	ajax = ajaxobj();
+	ajax.open("GET", "holamundo.php", true);
+	ajax.onreadystatechange=function() {
+		if (ajax.readyState==4) {
+			alert(ajax.responseText);
+		}
+	}
+	ajax.send(null);
+}
+</script>
+</head>
+<body>
+<input type="button" onclick="holaMundo()" value="Hola mundo" />
+</body>
+</html>
