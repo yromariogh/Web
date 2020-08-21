@@ -1,8 +1,8 @@
 # Programación en la Web (2020-1)
-Taller1: Postman  
-Taller2: HTML & Git  
+Taller1: Postman (Requests)  
+Taller2: HTML & Git (Basic)  
 Taller3: HTML (Forms & Grids)  
-Taller4: CSS  
+Taller4: CSS (+ Bootstrap & Materialize)  
 Taller5: JavaScript (Validation)  
 Taller6: JQuery (Search in Grid)  
 Taller7: AJAX (Select from json)  
