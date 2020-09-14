@@ -94,7 +94,6 @@ function validarFormulario() {
     }
     
     if (errores > 0) {
-        alert(errores);
         return false;
     }
     if (errores === 0) {
