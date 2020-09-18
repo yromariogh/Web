@@ -1,6 +1,8 @@
 package com.uis.project;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +18,9 @@ public class PersonaServiceImp implements PersonaService{
 
     @Override
     public Persona listarId(long id) {
-        return repositorio.findOne(id);
+        Optional<com.uis.project.Persona> optionalPersona = repositorio.findById(id);
+
+        return optionalPersona.get();
     }
 
     @Override
@@ -31,7 +35,10 @@ public class PersonaServiceImp implements PersonaService{
 
     @Override
     public Persona delete(long id) {
-        Persona p=repositorio.findOne(id);
+        Optional<com.uis.project.Persona> optionalPersona = repositorio.findById(id);
+
+        Persona p= optionalPersona.get();
+
         if(p!=null){
             repositorio.delete(p);
         }
