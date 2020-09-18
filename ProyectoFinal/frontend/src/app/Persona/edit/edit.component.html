@@ -19,11 +19,11 @@
           <ng-select [(ngModel)]="persona.tipoDocumento_id" name="first">
             <ng-option *ngFor="let tipo of tiposdocumento" [value]="tipo">{{tipo.nombre}}</ng-option>
           </ng-select>
-
         </div>
+        <br><br>
         <div class="form-group">
           <label for="">Numero de Documento:</label>
-          <input [(ngModel)]="persona.documento" name="apellidos" type="text" class="form-control">
+          <input [(ngModel)]="persona.documento" name="documento" type="text" class="form-control">
         </div>
         <div class="form-group">
           <label for="">Fecha de Nacimiento:</label>
@@ -35,8 +35,8 @@
           <ng-select [(ngModel)]="persona.lugarResidencia_id" name="second">
             <ng-option *ngFor="let tipo of ciudades" [value]="tipo">{{tipo.nombre}}</ng-option>
           </ng-select>
-
         </div>
+        <br><br>
         <div class="form-group">
           <label for="">Email:</label>
           <input [(ngModel)]="persona.email" name="email" type="text" class="form-control">

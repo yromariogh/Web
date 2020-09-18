@@ -21,46 +21,46 @@ public class CiudadController {
 	
 	// get all employees
 	@GetMapping("/ciudades")
-	public List<Ciudad> getAllDocumentos(){
+	public List<Ciudad> getAllCiudades(){
 		return ciudadRepository.findAll();
 	}		
 	
 	// create employee rest api
 	@PostMapping("/ciudades")
 
-	public Ciudad createTipoDocumento(@RequestBody Ciudad tipoDocumento) {
-		return ciudadRepository.save(tipoDocumento);
+	public Ciudad createCiudad(@RequestBody Ciudad ciudad) {
+		return ciudadRepository.save(ciudad);
 	}
 	
 	// get employee by id rest api
 	@GetMapping("/ciudades/{id}")
-	public ResponseEntity<Ciudad> getTipoDocumentoById(@PathVariable Long id) {
+	public ResponseEntity<Ciudad> getCiudadById(@PathVariable Long id) {
 		Ciudad ciudad = ciudadRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("La tipoDocumento con id no existe :" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("La ciudad con id no existe :" + id));
 		return ResponseEntity.ok(ciudad);
 	}
 	
 	// update employee rest api
 	
 	@PutMapping("/ciudades/{id}")
-	public ResponseEntity<Ciudad> updateTipoDocumento(@PathVariable Long id, @RequestBody Ciudad tipoDocumentoDetails){
-		Ciudad tipoDocumento = ciudadRepository.findById(id)
+	public ResponseEntity<Ciudad> updateCiudad(@PathVariable Long id, @RequestBody Ciudad ciudadDetails){
+		Ciudad ciudad = ciudadRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("La persona con id no existe :" + id));
 		
-		tipoDocumento.setNombre(tipoDocumentoDetails.getNombre());
-		tipoDocumento.setDescripcion(tipoDocumentoDetails.getDescripcion());
+		ciudad.setNombre(ciudadDetails.getNombre());
+		ciudad.setDescripcion(ciudadDetails.getDescripcion());
 
-		Ciudad updatedPersona = ciudadRepository.save(tipoDocumento);
+		Ciudad updatedPersona = ciudadRepository.save(ciudad);
 		return ResponseEntity.ok(updatedPersona);
 	}
 	
 	// delete employee rest api
 	@DeleteMapping("/ciudades/{id}")
-	public ResponseEntity<Map<String, Boolean>> deleteTipoDocumento(@PathVariable Long id){
-		Ciudad tipoDocumento = ciudadRepository.findById(id)
+	public ResponseEntity<Map<String, Boolean>> deleteCiudad(@PathVariable Long id){
+		Ciudad ciudad = ciudadRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Ciudad con id no existe :" + id));
 
-		ciudadRepository.delete(tipoDocumento);
+		ciudadRepository.delete(ciudad);
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 		return ResponseEntity.ok(response);
