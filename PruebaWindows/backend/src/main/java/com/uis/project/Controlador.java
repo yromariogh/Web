@@ -30,7 +30,7 @@ public class Controlador {
     }
     @GetMapping(path = {"/{id}"})
     public Persona listarId(@PathVariable("id")int id){
-        return service.listarId(id);
+        return service.listar();
     }
     @PutMapping(path = {"/{id}"})
     public Persona editar(@RequestBody Persona p,@PathVariable("id") int id){

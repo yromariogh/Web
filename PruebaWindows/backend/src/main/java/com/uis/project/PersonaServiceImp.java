@@ -16,7 +16,6 @@ public class PersonaServiceImp implements PersonaService{
         return repositorio.findAll();
     }
 
-    @Override
     public Persona listarId(long id) {
         Optional<com.uis.project.Persona> optionalPersona = repositorio.findById(id);
 
