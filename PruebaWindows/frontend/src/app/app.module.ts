@@ -8,6 +8,7 @@ import{FormsModule, ReactiveFormsModule}from '@angular/forms';
 import{ServiceService}from '../app/Service/service.service';
 import{HttpClientModule}from '@angular/common/http';
 import { ListarComponent } from './Persona/listar/listar.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ListarComponent } from './Persona/listar/listar.component';
   
   ],
   imports: [
+    NgSelectModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
