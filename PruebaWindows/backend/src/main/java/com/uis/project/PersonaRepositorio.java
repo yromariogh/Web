@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PersonaRepositorio extends JpaRepository<Persona, Long>{
     List<Persona>findAll();
-    Persona listar(long id);
+    Persona listarId(long id);
     Persona save(Persona p);
     void delete(Persona p);
 }
