@@ -14,12 +14,14 @@ export class ListarComponent implements OnInit {
   constructor(private service: ServiceService, private router: Router) { }
 
   ngOnInit() {
+    
     this.service.getPersonas()
       .subscribe(data => {
         this.personas = data;
       });
   }
   Editar(persona:Persona):void{
+    
     localStorage.setItem("id",persona.id.toString());
     this.router.navigate(["edit"]);
   }

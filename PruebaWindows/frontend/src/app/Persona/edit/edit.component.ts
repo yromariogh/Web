@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/Service/service.service';
 import { Persona } from 'src/app/Modelo/Persona';
 import { TipoDocumento } from 'src/app/Modelo/TipoDocumento';
+import { Ciudad } from 'src/app/Modelo/Ciudad';
 
 @Component({
   selector: 'app-edit',
@@ -12,7 +13,8 @@ import { TipoDocumento } from 'src/app/Modelo/TipoDocumento';
 export class EditComponent implements OnInit {
 
   persona :Persona=new Persona();
-  tipodocumento :TipoDocumento=new TipoDocumento();
+  tiposdocumento :TipoDocumento[];
+  ciudades: Ciudad[];
   constructor(private router:Router,private service:ServiceService) { }
 
   ngOnInit() {
@@ -20,6 +22,14 @@ export class EditComponent implements OnInit {
   }
 
   Editar(){
+    this.service.getTipoDocumento()
+    .subscribe(data=>{
+      this.tiposdocumento=data;
+    })
+    this.service.getCiudad()
+    .subscribe(data=>{
+      this.ciudades=data;
+    })
     let id=localStorage.getItem("id");
     this.service.getPersonaId(+id)
     .subscribe(data=>{
