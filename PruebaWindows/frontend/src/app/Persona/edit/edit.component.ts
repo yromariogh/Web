@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/Service/service.service';
 import { Persona } from 'src/app/Modelo/Persona';
+import { TipoDocumento } from 'src/app/Modelo/TipoDocumento';
 
 @Component({
   selector: 'app-edit',
@@ -11,6 +12,7 @@ import { Persona } from 'src/app/Modelo/Persona';
 export class EditComponent implements OnInit {
 
   persona :Persona=new Persona();
+  tipodocumento :TipoDocumento=new TipoDocumento();
   constructor(private router:Router,private service:ServiceService) { }
 
   ngOnInit() {

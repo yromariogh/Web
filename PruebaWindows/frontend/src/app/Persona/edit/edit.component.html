@@ -16,10 +16,10 @@
         <div class="form-group">
             <label for="">Tipo de Documento:</label>
             <br>
-            <select [(ngModel)]="persona.tipoDocumento_id" name="tipoDocumento_id">
-                <option value="">Fuck</option>
-                <option value="">Everything</option>
-            </select>
+            <ng-select [(ngModel)]="persona.tipoDocumento_id" name="first">
+              <ng-option *ngFor="let tipo of tipodocumento.nombre" [value]="tipo" >{{tipo}}</ng-option>
+          </ng-select>
+          
         </div>
         <div class="form-group">
             <label for="">Numero de Documento:</label>

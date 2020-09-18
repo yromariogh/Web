@@ -25,13 +25,13 @@
             <td>{{persona.id}}</td>
             <td>{{persona.name}}</td>
             <td>{{persona.apellidos}}</td>
-            <td></td>
+            <td>{{persona.tipoDocumento_id.nombre}}</td>
             <td>{{persona.documento}}</td>
             <td>{{persona.fechaNacimiento}}</td>
             <td>{{persona.email}}</td>
             <td>{{persona.telefono}}</td>
             <td>{{persona.usuario}}</td>
-            <td></td>
+            <td>{{persona.lugarResidencia_id.nombre}}</td>
             <td>
               <button (click)="Editar(persona)" class="btn btn-warning">Editar</button>
               <button (click)="Delete(persona)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
