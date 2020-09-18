@@ -29,11 +29,9 @@ export class AddComponent implements OnInit {
   }
 
   Guardar(){
-    this.service.createPersona(this.persona)
-    .subscribe(data=>{
+    
       alert("Se Agrego con Exito...!!!");
       this.router.navigate(["listar"]);
-    })
   }
 
 }
