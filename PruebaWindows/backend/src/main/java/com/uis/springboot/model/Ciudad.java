@@ -8,18 +8,15 @@ public class Ciudad {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ciudades_id")
 	private long id;
 
-	@OneToOne(mappedBy = "lugarResidencia_id")
+	@OneToOne(mappedBy = "lugarresidencia_id")
 	private Persona persona;
 
-	@Column(name = "Nombre")
+	@Column(name = "nombre")
 	private String nombre;
 
-
-
-	@Column(name = "Descripcion")
+	@Column(name = "descripcion")
 	private String descripcion;
 
 	public long getId() {

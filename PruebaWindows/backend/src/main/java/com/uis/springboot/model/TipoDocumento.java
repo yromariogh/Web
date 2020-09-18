@@ -11,13 +11,13 @@ public class TipoDocumento{
 	@Column(name = "tiposdocumento_id")
 	private long id;
 
-	@OneToOne(mappedBy = "tipoDocumento_id")
+	@OneToOne(mappedBy = "tipodocumento_id")
 	private Persona persona;
 
-	@Column(name = "Nombre")
+	@Column(name = "nombre")
 	private String nombre;
 
-	@Column(name = "Descripcion")
+	@Column(name = "descripcion")
 	private String descripcion;
 
 	public long getId() {

@@ -24,31 +24,28 @@ public class Persona {
 	@Column(name = "Documento")
 	private int documento;
 
-	@Column(name = "FechaNacimiento")
+	@Column(name = "fechanacimiento")
 	private Date fechaNacimiento;
 
-	@Column(name = "Email")
+	@Column(name = "email")
 	private String email;
 
-	@Column(name = "Telefono")
+	@Column(name = "telefono")
 	private int telefono;
 
-	@Column(name = "Usuario")
+	@Column(name = "usuario")
 	private String usuario;
 
-	@Column(name = "Password")
+	@Column(name = "password")
 	private String password;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(unique = true)
-	private TipoDocumento tipoDocumento_id;
+	private TipoDocumento tipodocumento_id;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(unique = true)
-	private Ciudad lugarResidencia_id;
-
-
-
+	private Ciudad lugarresidencia_id;
 
 	public long getId() {
 		return id;
@@ -124,18 +121,18 @@ public class Persona {
 
 
 	public Ciudad getLugarResidencia_id() {
-		return lugarResidencia_id;
+		return lugarresidencia_id;
 	}
 
 	public void setLugarResidencia_id(Ciudad lugarResidencia_id) {
-		this.lugarResidencia_id = lugarResidencia_id;
+		this.lugarresidencia_id = lugarResidencia_id;
 	}
 
 	public TipoDocumento getTipoDocumento_id() {
-		return tipoDocumento_id;
+		return tipodocumento_id;
 	}
 
 	public void setTipoDocumento_id(TipoDocumento tipoDocumento_id) {
-		this.tipoDocumento_id = tipoDocumento_id;
+		this.tipodocumento_id = tipoDocumento_id;
 	}
 }
