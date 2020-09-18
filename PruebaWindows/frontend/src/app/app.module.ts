@@ -8,13 +8,15 @@ import { EditComponent } from './Persona/edit/edit.component';
 import{FormsModule}from '@angular/forms';
 import{ServiceService}from '../app/Service/service.service';
 import{HttpClientModule}from '@angular/common/http';
+import { ListarComponent } from './Persona/listar/listar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    ListarComponent
   
   ],
   imports: [
