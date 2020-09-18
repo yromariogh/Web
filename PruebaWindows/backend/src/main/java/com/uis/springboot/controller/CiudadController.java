@@ -35,9 +35,9 @@ public class CiudadController {
 	// get employee by id rest api
 	@GetMapping("/ciudades/{id}")
 	public ResponseEntity<Ciudad> getTipoDocumentoById(@PathVariable Long id) {
-		Ciudad tipoDocumento = ciudadRepository.findById(id)
+		Ciudad ciudad = ciudadRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("La tipoDocumento con id no existe :" + id));
-		return ResponseEntity.ok(tipoDocumento);
+		return ResponseEntity.ok(ciudad);
 	}
 	
 	// update employee rest api

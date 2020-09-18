@@ -1,8 +1,6 @@
 package com.uis.springboot.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Date;
 
 @Entity
 @Table(name = "tiposdocumento")
