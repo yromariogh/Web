@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="card">
+  <div class="card" style="width: 88rem;">
     <div class="card-header">
       <h3>Personas</h3>
     </div>
@@ -10,6 +10,13 @@
             <th>ID</th>
             <th>NOMBRES</th>
             <th>APELLIDOS</th>
+            <th>TIPO DE DOCUMENTO</th>
+            <th>DOCUMENTO</th>
+            <th>NACIMIENTO</th>
+            <th>EMAIL</th>
+            <th>TELEFONO</th>
+            <th>USUARIO</th>
+            <th>RESIDENCIA</th>
             <th>ACCIONES</th>
           </tr>
         </thead>
@@ -18,6 +25,13 @@
             <td>{{persona.id}}</td>
             <td>{{persona.name}}</td>
             <td>{{persona.apellidos}}</td>
+            <td>{{persona.tipoDocumento_id}}</td>
+            <td>{{persona.documento}}</td>
+            <td>{{persona.fechaNacimiento}}</td>
+            <td>{{persona.email}}</td>
+            <td>{{persona.telefono}}</td>
+            <td>{{persona.usuario}}</td>
+            <td>{{persona.lugarResidencia_id}}</td>
             <td>
               <button (click)="Editar(persona)" class="btn btn-warning">Editar</button>
               <button (click)="Delete(persona)" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
