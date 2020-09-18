@@ -21,7 +21,7 @@ public class TipoDocumentoController {
 	
 	// get all employees
 	@GetMapping("/tiposdocumento")
-	public List<TipoDocumento> getAllDocumentos(){
+	public List<TipoDocumento> getAllTiposDocumento(){
 		return tipoDocumentoRepository.findAll();
 	}		
 	
@@ -36,7 +36,7 @@ public class TipoDocumentoController {
 	@GetMapping("/tiposdocumento/{id}")
 	public ResponseEntity<TipoDocumento> getTipoDocumentoById(@PathVariable Long id) {
 		TipoDocumento tipoDocumento = tipoDocumentoRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("La tipoDocumento con id no existe :" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("El tipoDocumento con id no existe :" + id));
 		return ResponseEntity.ok(tipoDocumento);
 	}
 	
@@ -45,7 +45,7 @@ public class TipoDocumentoController {
 	@PutMapping("/tiposdocumento/{id}")
 	public ResponseEntity<TipoDocumento> updateTipoDocumento(@PathVariable Long id, @RequestBody TipoDocumento tipoDocumentoDetails){
 		TipoDocumento tipoDocumento = tipoDocumentoRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("La persona con id no existe :" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("El tipoDocumento con id no existe :" + id));
 		
 		tipoDocumento.setNombre(tipoDocumentoDetails.getNombre());
 		tipoDocumento.setDescripcion(tipoDocumentoDetails.getDescripcion());
@@ -58,7 +58,7 @@ public class TipoDocumentoController {
 	@DeleteMapping("/tiposdocumento/{id}")
 	public ResponseEntity<Map<String, Boolean>> deleteTipoDocumento(@PathVariable Long id){
 		TipoDocumento tipoDocumento = tipoDocumentoRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("TipoDocumento con id no existe :" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("El tipoDocumento con id no existe :" + id));
 		
 		tipoDocumentoRepository.delete(tipoDocumento);
 		Map<String, Boolean> response = new HashMap<>();

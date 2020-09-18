@@ -12,9 +12,11 @@ import { Ciudad } from 'src/app/Modelo/Ciudad';
 })
 export class AddComponent implements OnInit {
 
+  
   persona:Persona=new Persona();
-  tiposdocumento :TipoDocumento[];
-  ciudades: Ciudad[];
+  tiposdocumento:TipoDocumento[];
+  ciudades:Ciudad[]
+  
   constructor(private router:Router, private service:ServiceService) { }
 
   ngOnInit() {

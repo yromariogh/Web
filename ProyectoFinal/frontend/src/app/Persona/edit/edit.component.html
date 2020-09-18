@@ -7,7 +7,7 @@
       <form action="">
         <div class="form-group">
           <label for="">Nombres:</label>
-          <input [(ngModel)]="persona.nombres" name="name" type="text" class="form-control">
+          <input [(ngModel)]="persona.nombres" name="nombres" type="text" class="form-control">
         </div>
         <div class="form-group">
           <label for="">Apellidos:</label>
@@ -33,7 +33,7 @@
           <label for="">Lugar de residencia:</label>
           <br>
           <ng-select [(ngModel)]="persona.lugarResidencia_id" name="second">
-            <ng-option *ngFor="let tipo of ciudades" [value]="tipo">{{tipo.nombre}}</ng-option>
+            <ng-option *ngFor="let city of ciudades" [value]="city">{{city.nombre}}</ng-option>
           </ng-select>
         </div>
         <br><br>
@@ -53,7 +53,7 @@
           <label for="">Contraseña:</label>
           <input [(ngModel)]="persona.password" name="password" type="text" class="form-control">
         </div>
-        <button (click)="Actualizar(persona)" class="btn btn-danger">Actualizar</button>
+        <button (click)="Actualizar(persona)" class="btn btn-warning">Actualizar</button>
       </form>
     </div>
   </div>

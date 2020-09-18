@@ -31,7 +31,7 @@ public class PersonaController {
 	
 	// get all employees
 	@GetMapping("/personas")
-	public List<Persona> getAllEmployees(){
+	public List<Persona> getAllPersonas(){
 		return personaRepository.findAll();
 	}		
 	

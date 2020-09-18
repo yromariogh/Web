@@ -15,13 +15,13 @@ public class Persona {
 	@Column(name = "persona_id")
 	private long id;
 
-	@Column(name = "Nombres")
+	@Column(name = "nombres")
 	private String nombres;
 
-	@Column(name = "Apellidos")
+	@Column(name = "apellidos")
 	private String apellidos;
 
-	@Column(name = "Documento")
+	@Column(name = "documento")
 	private int documento;
 
 	@Column(name = "fechanacimiento")

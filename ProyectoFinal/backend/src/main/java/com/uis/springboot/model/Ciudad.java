@@ -8,6 +8,7 @@ public class Ciudad {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "lugarresidencia_id")
 	private long id;
 
 	@OneToOne(mappedBy = "lugarresidencia_id")
