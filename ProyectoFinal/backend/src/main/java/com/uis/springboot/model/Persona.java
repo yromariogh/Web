@@ -2,6 +2,8 @@ package com.uis.springboot.model;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -41,11 +43,28 @@ public class Persona {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(unique = true)
+	@JsonIgnore
 	private TipoDocumento tipodocumento_id;
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(unique = true)
+	@JsonIgnore
 	private Ciudad lugarresidencia_id;
+
+	public Persona() {}
+
+	public Persona(String nombres, String apellidos, int documento, Date fechaNacimiento, String email, int telefono, String usuario, String password, TipoDocumento tipodocumento_id, Ciudad lugarresidencia_id) {
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.documento = documento;
+		this.fechaNacimiento = fechaNacimiento;
+		this.email = email;
+		this.telefono = telefono;
+		this.usuario = usuario;
+		this.password = password;
+		this.tipodocumento_id = tipodocumento_id;
+		this.lugarresidencia_id = lugarresidencia_id;
+	}
 
 	public long getId() {
 		return id;

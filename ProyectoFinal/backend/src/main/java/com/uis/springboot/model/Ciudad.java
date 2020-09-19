@@ -20,6 +20,14 @@ public class Ciudad {
 	@Column(name = "descripcion")
 	private String descripcion;
 
+	public Ciudad() {}
+
+	public Ciudad(Persona persona, String nombre, String descripcion) {
+		this.persona = persona;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+
 	public long getId() {
 		return id;
 	}

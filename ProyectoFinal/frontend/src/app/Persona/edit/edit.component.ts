@@ -43,7 +43,8 @@ export class EditComponent implements OnInit {
       this.persona=data;
       alert("Se Actualizo con Exito...!!!");
       this.router.navigate(["listar"]);
-    })
+    },
+    error => console.log(error))
   }
 
 }

@@ -19,7 +19,8 @@ export class AddComponent implements OnInit {
   
   constructor(private router:Router, private service:ServiceService) { }
 
-  ngOnInit() {
+  ngOnInit() { 
+  
     this.service.getTipoDocumento()
     .subscribe(data=>{
       this.tiposdocumento=data;
@@ -35,7 +36,8 @@ export class AddComponent implements OnInit {
     .subscribe(data=>{
       alert("Se Agrego con Exito...!!!");
       this.router.navigate(["listar"]);
-    })
+    },
+    error => console.log(error));
   }
 
 }

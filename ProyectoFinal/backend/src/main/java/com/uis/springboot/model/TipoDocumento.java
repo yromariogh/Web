@@ -20,6 +20,14 @@ public class TipoDocumento{
 	@Column(name = "descripcion")
 	private String descripcion;
 
+	public TipoDocumento() {}
+
+	public TipoDocumento(Persona persona, String nombre, String descripcion) {
+		this.persona = persona;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+
 	public long getId() {
 		return id;
 	}

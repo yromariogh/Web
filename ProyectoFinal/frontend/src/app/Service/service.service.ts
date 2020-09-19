@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Persona } from '../Modelo/Persona';
 import { TipoDocumento } from '../Modelo/TipoDocumento';
 import { Ciudad } from '../Modelo/Ciudad';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class ServiceService {
@@ -14,17 +15,17 @@ export class ServiceService {
   Url_TipoDocumento = 'http://localhost:8080/api/v1/tiposdocumento';
   Url_Ciudad = 'http://localhost:8080/api/v1/ciudades';
 
-  getPersonas(){
+  getPersonasList():Observable<Persona[]>{
     return this.http.get<Persona[]>(this.Url);
   }
-  getTipoDocumento(){
+  getTipoDocumento():Observable<TipoDocumento[]>{
     return this.http.get<TipoDocumento[]>(this.Url_TipoDocumento);
   }
-  getCiudad(){
+  getCiudad():Observable<Ciudad[]>{
     return this.http.get<Ciudad[]>(this.Url_Ciudad);
   }
-  createPersona(persona:Persona){
-    return this.http.post<Persona>(this.Url,persona);
+  createPersona(persona:Persona): Observable<Object>{
+    return this.http.post(`${this.Url}`,persona);
   }
   getPersonaId(id:number){
     return this.http.get<Persona>(this.Url+"/"+id);
